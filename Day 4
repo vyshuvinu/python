@@ -1,0 +1,324 @@
+
+PRODDEC PYTHON DAY 4
+Global variable and Local variable
+In [13]:
+num1=125   
+print(num1) # Printing global variable.
+
+def sayHello():
+    num1=500   
+    print(num1)  # Printing local variable.
+    print("Hello")
+
+sayHello()
+print(num1)  # This will print the global variable.
+125
+500
+Hello
+125
+Global keyword
+In [16]:
+num1=125   
+print(num1) # Printing global variable.
+
+def sayHello():
+    global num1
+    num1=500   
+    print(num1)  # Printing global variable.
+    print("Hello")
+
+sayHello()
+print(num1)  # This will print the global variable.
+125
+500
+Hello
+500
+Recursion
+In [22]:
+# Calling a function from itself is called recursion.
+Example 1
+In [20]:
+count=1
+def callMe():
+    global count
+    print("Hello",count)
+    count+=1
+    if count>10:
+        print("Session ended.")
+    else:
+        callMe()
+callMe()
+Hello 1
+Hello 2
+Hello 3
+Hello 4
+Hello 5
+Hello 6
+Hello 7
+Hello 8
+Hello 9
+Hello 10
+Session ended.
+Example 2
+In [21]:
+# calling a function from itself ->recursion
+# Using function argument.
+def callMe(count):
+    print("Hello",count)
+    if count>10:
+        print("Session ended.")
+    else:
+        callMe(count+1)
+callMe(1)
+Hello 1
+Hello 2
+Hello 3
+Hello 4
+Hello 5
+Hello 6
+Hello 7
+Hello 8
+Hello 9
+Hello 10
+Hello 11
+Session ended.
+Loops
+In [ ]:
+"""
+A loop statement allows us to execute a statement or
+group of statements multiple times.
+"""
+while loop
+In [ ]:
+# While loop execute code, until condition is False.
+# Dont run this at home.
+# Print Hello for ever.
+while True:
+    print("Hello")
+In [27]:
+# print upto 10
+counter=1
+while counter<=10:
+    print(counter)
+    counter+=1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+In [29]:
+# print hello 10 times
+counter=1
+while counter<=10:
+    print("Hello",counter)
+    counter+=1
+Hello 1
+Hello 2
+Hello 3
+Hello 4
+Hello 5
+Hello 6
+Hello 7
+Hello 8
+Hello 9
+Hello 10
+In [31]:
+# Printing all items in a list.
+cars=["ferrari","bmw","fiet","honda","jaguar","ambassador"]
+
+counter=0
+while counter<len(cars):
+    print(cars[counter])
+    counter+=1
+ferrari
+bmw
+fiet
+honda
+jaguar
+ambassador
+In [33]:
+# Five times getting input from the user
+counter=0
+nameList=[]  # Creating an empty list
+while counter<5:
+    name=input("Enter your name: ")
+    nameList.append(name)
+    counter+=1
+
+print(nameList)  # Priting the stored list.
+Enter your name: peter
+Enter your name: david
+Enter your name: james
+Enter your name: ram
+Enter your name: hari
+['peter', 'david', 'james', 'ram', 'hari']
+Break statement in loops
+In [34]:
+# Original password guessing system.
+originalPassword="killyou"
+while True:
+    userPassword=input("Enter your password: ")
+    print(userPassword)
+    if userPassword==originalPassword:
+        print("Access Granted!!")
+        break    # Exiting the while loop.
+Enter your password: hello me
+hello me
+Enter your password: password
+password
+Enter your password: 12345678
+12345678
+Enter your password: peterdavidson
+peterdavidson
+Enter your password: killyou
+killyou
+Access Granted!!
+Continue statement in Loops
+In [38]:
+# Printing all odd numbers upto 20
+counter=0
+while counter<20:
+    counter+=1
+    if counter%2==0:
+        continue
+    print(counter)
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+for loop
+In [40]:
+# For loop help to run a block of code, particular number of times.
+for i in range(10):
+    print("Hello",i)
+Hello 0
+Hello 1
+Hello 2
+Hello 3
+Hello 4
+Hello 5
+Hello 6
+Hello 7
+Hello 8
+Hello 9
+In [43]:
+# Printing a range of numbers
+for i in range(10,20):
+    print("Hello",i)
+Hello 10
+Hello 11
+Hello 12
+Hello 13
+Hello 14
+Hello 15
+Hello 16
+Hello 17
+Hello 18
+Hello 19
+In [46]:
+# printin the Even numbers upto 20
+for i in range(2,21,2):
+    print(i)
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+In [48]:
+# printing the multiples of 3 upto 40
+for i in range(3,41,3):
+    print(i)
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+33
+36
+39
+Printing all items in a list.
+In [50]:
+# Method 1
+cars=["ferrari","bmw","fiet","honda","jaguar","ambassador"]
+for i in cars:
+    print(i)
+ferrari
+bmw
+fiet
+honda
+jaguar
+ambassador
+In [51]:
+# Method 2
+cars=["ferrari","bmw","fiet","honda","jaguar","ambassador"]
+for i in range(len(cars)):
+    print(cars[i])
+ferrari
+bmw
+fiet
+honda
+jaguar
+ambassador
+In [42]:
+# Printing all the character in a string.
+animal="giraffe"
+for i in animal:
+    print(i)
+g
+i
+r
+a
+f
+f
+e
+Break in for loops
+In [49]:
+# Printing upto 5
+for i in range(20):
+    print(i)
+    if i==5:
+        break
+0
+1
+2
+3
+4
+5
+Continue in for loops
+In [53]:
+# Skipping 5 in the number
+for i in range(11):
+    if i==5:
+        continue
+    print(i)
+0
+1
+2
+3
+4
+6
+7
+8
+9
+10
