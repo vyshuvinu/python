@@ -1,0 +1,8 @@
+
+
+#average 
+e=9
+
+d=3
+c=6
+print((e+d+c)/3)
