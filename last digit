@@ -1,0 +1,2 @@
+a=int(input("enter a number:"))
+print("the last digit of the number is:",a%10)
