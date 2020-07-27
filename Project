@@ -1,0 +1,81 @@
+from tkinter import *
+root=Tk()
+def login():
+ root 2=Toplevel(root)
+l=Label(root2,text="User name").grid(row=2,column=1,pady=5)
+e=Entry(root2,width=15).grid(row=2,column=2)
+l1=Label(root2,text="Password").grid(row=3,column=1,pady=5)
+e=Entry(root2,show="*",width=15).grid(row=3,column=2,pady=5)
+b3=Buton(root2,text="Login",command=choice).grid(row=5,column=2,padx=50)
+b4=Buton(root2,text="New User",command=newuser).grid(row=5,column=3)
+def newuser():
+root3=Toplevel(root)
+l2=Label(root3,text="Name").grid(row=1,column=1,pady=5)
+e2=Entry(root3,width=15).grid(row=1,column=2,pady=5)
+l5=Label(root3,text="Gender").grid(row=2,column=1,pady=5)
+var = IntVar()
+r1=Radiobuton(root3,text="Male", variable=var, value=1).grid(row=2,column=2)
+r2=Radiobuton(root3,text="Female", variable=var, value=2).grid(row=2,column=3)
+l3=Label(root3,text="Mobile No").grid(row=3,column=1,pady=5)
+e4=Entry(root3,width=15).grid(row=3,column=2,pady=5)
+l4=Label(root3,text="Email Id").grid(row=4,column=1,pady=5)
+e5=Entry(root3,width=15).grid(row=4,column=2,pady=5)
+b5=Buton(root3,text="Submit",command=choice).grid(row=5,column=2,padx=5)
+def choice():
+root6=Toplevel(root)
+b5=Buton(root6,text="Submit Book",command=subbook).grid(row=1,column=1,padx=5)
+b8=Buton(root6,text="Request Book",command=reqbook).grid(row=1,column=3,padx=5)
+def subbook():
+root5=Toplevel(root)
+result2Str= StringVar()
+result6Str=StringVar()
+result2Str.set("In Rs ")
+result6Str.set("")
+l=Label(root5,text="User name").grid(row=2,column=1,pady=5)
+e=Entry(root5,width=15).grid(row=2,column=2)
+resultLabel = Label(root5,textvariable=result2Str).grid(row=5,column=2)
+resultLabel = Label(root5,textvariable=result6Str).grid(row=7,column=2)
+l=Label(root5,text="Book name :").grid(row=3,column=1,pady=5)
+def price(self):
+s=str(variable.get())
+if(s=="c" or s=="c++"):
+result2Str.set("In Rs.1000")
+elif(s=="Dbms"):
+result2Str.set("In Rs.750")
+else:
+result2Str.set("In rs.500")
+variable=StringVar(root5)
+variable.set("C")
+w=OptonMenu(root5,variable,"Data structures","Dbms","Python","c++","c",command=price).grid(row=3,column=2)
+def sub():
+result6Str.set("Submissional Successfull")
+b1=Buton(root5,text="Submit",command=sub).grid(row=6,column=2,padx=50)
+def reqbook():
+root6=Toplevel(root)
+result3Str=StringVar()
+result4Str=StringVar()
+result3Str.set("")
+result4Str.set("")
+l=Label(root6,text="User name").grid(row=2,column=1,pady=5)
+e=Entry(root6,width=15).grid(row=2,column=2)
+result3Label = Label(root6,textvariable=result3Str).grid(row=4,column=2)
+result4Label = Label(root6,textvariable=result4Str).grid(row=7,column=2)
+l=Label(root6,text="Book name :").grid(row=3,column=1,pady=5)
+def price(self):
+s=str(variable.get())
+if(s=="c" or s=="c++"):
+result3Str.set("In Rs.1000")
+elif(s=="Dbms"):
+result3Str.set("In Rs.750")
+else:
+result3Str.set("In rs.500")
+variable=StringVar(root6)
+w=OptonMenu(root6,variable,"Data structures","Dbms","Python","c++","c",command=price).grid(row=3,column=2)
+variable.set("c")
+def order():
+result4Str.set("Ordered Successfully")
+b1=Buton(root6,text="Order",command=order).grid(row=5,column=2,padx=50)
+b=Buton(root,text="Login",command=login).grid(row=0,column=1,pady=20)
+b1=Buton(root,text="New User",command=newuser).grid(row=0,column=3,padx=50)
+b2=Buton(root,text="Available Books",command=reqbook).grid(row=0,column=5)
+root=mainloop()
